@@ -2,14 +2,6 @@
 
 set -e
 
-# Download the matching version
-curl -L  \
-	https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 \
-	-o /usr/local/bin/jq
-
-# Make it executable
-chmod +x /usr/local/bin/jq
-
 # Extract "host" argument from the input into HOST shell variable
 eval "$(jq -r '@sh "HOST=\(.host)"')"
 
