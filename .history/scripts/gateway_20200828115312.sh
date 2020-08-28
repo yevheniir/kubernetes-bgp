@@ -2,8 +2,7 @@
 
 set -e
 
-yum install epel-release -y
-yum install jq -y
+
 
 # Extract "host" argument from the input into HOST shell variable
 eval "$(jq -r '@sh "HOST=\(.host)"')"
