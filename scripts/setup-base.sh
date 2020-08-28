@@ -17,6 +17,14 @@ echo "Disable swap"
 swapoff -a
 sed -i.bak '/swap/s/^/#/g' /etc/fstab
 
+# Download the matching version
+curl -L  \
+	https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 \
+	-o /usr/local/bin/jq
+
+# Make it executable
+chmod +x /usr/local/bin/jq
+
 # Verify
 cat /proc/swaps
 
